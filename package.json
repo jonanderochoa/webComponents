@@ -1,0 +1,19 @@
+{
+  "name": "webcomponents",
+  "version": "1.0.0",
+  "description": "Ejercicios aprender webcomponents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonanderochoa/webComponents.git"
+  },
+  "author": "Jon Ander Ochoa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonanderochoa/webComponents/issues"
+  },
+  "homepage": "https://github.com/jonanderochoa/webComponents#readme"
+}
