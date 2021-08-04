@@ -3,6 +3,7 @@ class HelloWorldComponent extends HTMLElement {
     constructor(){
         super();
         this.saludo = "Hola Mundo, como estas";
+        this.pintado = false;
     }
 
     // Se dispara cuando se cambia un atributo
@@ -11,6 +12,9 @@ class HelloWorldComponent extends HTMLElement {
         console.log(`El atributo ${atributo} ha cambiado de ${viejoValor} a ${nuevoValor}`);
         if(atributo === 'nombre') {
             this.saludo = `Hola Mundo, como estas ${nuevoValor}`;
+        }
+        if(this.pintado) {
+            this.innerHTML = this.saludo;
         }
     }
 
@@ -22,15 +26,14 @@ class HelloWorldComponent extends HTMLElement {
     // Se ejecuta cuando se añade el componente a un DOM
     connectedCallback() {
         console.log("Añadido al DOM");
-
-        let $saludo = document.createElement("strong");
-        $saludo.innerHTML = this.saludo;
-        this.appendChild($saludo);
+        this.pintado = true;
+        this.innerHTML = this.saludo;
     }
 
     // Se ejecuta cuando se desconecta el componente del DOM
     disconnectedCallback() {
-        console.log("Eliminado del DOM")
+        console.log("Eliminado del DOM");
+        this.pintado = false;
     }
 }
 
