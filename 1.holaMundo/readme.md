@@ -1,7 +1,16 @@
 # 1º componente básico Hola mundo
+
+Si un navegador no detecta el custom element o no esta preparado para el se muestra y funciona como un div.
+
 En este primer componente tenemos dos ficheros:
 - index.html
 - component.js
+
+Para ejecutar el proyecto usaremos live-server. Desde la terminal en la ruta: 
+    
+    live-server
+
+Este server refresca la pagina automaticamente cada vez que guardamos sin tener que hacer refresh.
 
 ## index.html
 
@@ -82,3 +91,17 @@ Cuando se produzca un cambio se disparara el metodo __attributeChangedCallback()
 Si el atributo es nombre sustituira el valor por defecto de la propiedad __this.saludo__ por el nuevo valor y lo añadira al html:
 
     this.innerHTML = this.saludo;
+
+# Funcionamiento
+
+Si pongo un valor como atributo de la etiqueta nombre se muestra en el texto.
+
+    <hello-world></hello-world>
+
+Si no tiene el atributo nombre, se muestra el texto por defecto: *"Hola Mundo, como estas"*
+
+Si tiene un valor, como por ejemplo:
+
+    <hello-world nombre="jon ander ochoa"></hello-world>
+
+Se muestra: *"Hola Mundo, como estas jon ander ochoa"*
