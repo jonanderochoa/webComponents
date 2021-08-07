@@ -5,9 +5,9 @@ Si queremos usar un DOM mas complejo, no es practico usar __createElement()__. P
 - Uso de la etiqueta __\<template>__.
 - shadow-root
 
-La etiqueta template es parte de HTML 5.
+La etiqueta __template__ es parte de HTML 5. El problema con template es que aunque es un DOM independiente, podemos acceder a su etiqueta y hacer modificaciones con el css.
 
-Podemos usar ownerDocument para saber cual es el padre del elemento como DOM:
+Para saber cual es el padre del elemento como DOM usaremos ownerDocument:
     
     document.querySelector("#divDestino").ownerDocument
 
@@ -36,8 +36,8 @@ Tiene dos parametros:
 
 ## component.js
 
-Shadow-root genera una barrera que evita modificar el componente con el css, seleccionar un elemento interno del mismo o sus eventos. 
-AttachShadow nos da un shadowDom como un nuevo DOM.
+Shadow-root genera una barrera que evita modificar el componente con el css, seleccionar un elemento interno del mismo o sus eventos. De esta manera si introducimos un componente en una web con sus css y sus eventos, aunque las etiquetas tengan los mismos ids no se veran afectados.
+AttachShadow nos da un shadowDom. Un DOM independiente y oculto.
 Tiene 1 objecto con 2 parametros:
 - delegatesFocus
 - mode
