@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jonanderochoa/webComponents/issues"
   },
-  "homepage": "https://github.com/jonanderochoa/webComponents#readme"
+  "homepage": "https://github.com/jonanderochoa/webComponents#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4"
+  }
 }
