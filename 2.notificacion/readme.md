@@ -47,7 +47,7 @@ Tiene 1 objecto con 2 parametros:
 
 ### mode:
 
-Como se crea el shadow-root: open / close
+Como se crea el shadow-root: __open / close__
 
     this.attachShadow({ mode: "open" });
 
