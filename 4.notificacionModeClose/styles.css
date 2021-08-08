@@ -1,0 +1,23 @@
+# Afecta al root
+:host {
+    border: 1px solid red;
+    border-radius: 10px;
+    display: flex; 
+}
+
+.title {
+    font-size: 1.2em;
+}
+
+.action {
+    border-radius: 4px;
+    border: 1px solid black;
+    background: white;
+    padding: 2px 16px;
+    font-weight: bold;
+}
+
+.icon {
+    margin-left: 10px;
+    margin-right: 10px;
+}
