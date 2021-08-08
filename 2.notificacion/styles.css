@@ -1,14 +1,15 @@
-.error {
+# Afecta al root
+:host {
     border: 1px solid red;
     border-radius: 10px;
     display: flex; 
 }
 
-.error__title {
+.title {
     font-size: 1.2em;
 }
 
-.error__action {
+.action {
     border-radius: 4px;
     border: 1px solid black;
     background: white;
@@ -16,7 +17,7 @@
     font-weight: bold;
 }
 
-.error__icon {
+.icon {
     margin-left: 10px;
     margin-right: 10px;
 }
