@@ -9,6 +9,10 @@ class CustomButtonComponent extends HTMLButtonElement {
     _alPulsarBoton() {
         this.setAttribute("disabled", "disabled");
         this.innerHTML = this.textoAlPulsar;
+        setTimeout(() => {
+            this.disabled = false;
+            this.innerHTML = "Guardar"
+        }, 3000);
     }
 
     connectedCallback() {
