@@ -44,8 +44,7 @@ class Counter extends HTMLElement {
 
   increment() {
     this.value++;
-    this.input.value = this.value;
-    // this.updateInput();
+    this.updateInput();
   }
 
   decrement() {
