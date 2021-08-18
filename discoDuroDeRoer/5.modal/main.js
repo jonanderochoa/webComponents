@@ -81,8 +81,12 @@ class MyCustomModal extends HTMLElement {
             </style>
             <div class="${modalClass}">
                 <div class="jon-modal">
-                    <p class="title">Titulo</p>
-                    <p class="content">Contenido</p>
+                    <p class="title">
+                        <slot name="title"></slot>
+                    </p>
+                    <p class="content">
+                        <slot name="content"></slot>
+                    </p>
                     <div class="button-container">
                         <button class="ok">Aceptar</button>
                         <button class="cancel">Cancelar</button>
