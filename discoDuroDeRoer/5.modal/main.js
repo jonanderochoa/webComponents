@@ -2,14 +2,32 @@ class MyCustomModal extends HTMLElement {
 
     constructor() {
         super();
+    }
+    
+    connectedCallback() {
         this.render();
     }
 
-    connectedCallback() {
+    get visible() {
+        return this.hasAttribute("visible");
+    }
 
+    set visible(value) {
+        const $wrapper = this.shadowRoot.querySelector(".wrapper");
+        if(value) {
+            this.setAttribute("visible", "");
+            $wrapper.classList.add("visible");
+        }else{
+            this.removeAttribute("visible");
+            $wrapper.classList.remove("visible");
+        }
     }
 
     render() {
+        let modalClass = 'wrapper';
+        if(this.visible) {
+            modalClass += ' visible';
+        }
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML = `
             <style>
@@ -20,7 +38,12 @@ class MyCustomModal extends HTMLElement {
                     width: 100%;
                     height: 100%;
                     z-index: 9998;
+                    visibility: hidden;
                     background-color: hsla(0, 0%, 100%, .6)
+                }
+                .visible {
+                    opacity: 1;
+                    visibility: visible;
                 }
                 .jon-modal {
                     padding: 10px;
@@ -56,7 +79,7 @@ class MyCustomModal extends HTMLElement {
                     border: 1px solid #FF000C;
                 }
             </style>
-            <div class="wrapper">
+            <div class="${modalClass}">
                 <div class="jon-modal">
                     <p class="title">Titulo</p>
                     <p class="content">Contenido</p>
