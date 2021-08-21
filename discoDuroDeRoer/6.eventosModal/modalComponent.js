@@ -6,6 +6,21 @@ class MyCustomModal extends HTMLElement {
     
     connectedCallback() {
         this.render();
+        this.attachEventHandlers();
+    }
+
+    attachEventHandlers() {
+        const buttonOk = this.shadowRoot.querySelector(".ok");
+        const buttonCancel = this.shadowRoot.querySelector(".cancel");
+
+        buttonOk.addEventListener('click', () => {
+            this.dispatchEvent(new CustomEvent('ok'));
+            this.visible = false;
+        });
+        buttonCancel.addEventListener('click', () => {
+            this.dispatchEvent(new CustomEvent('cancel'));
+            this.visible = false;
+        });
     }
 
     get visible() {

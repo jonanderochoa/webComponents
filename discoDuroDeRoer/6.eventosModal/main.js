@@ -9,5 +9,13 @@ function init() {
     boton.addEventListener('click', function() {
         modal.visible = true;
     });
+
+    modal.addEventListener('ok', function() {
+        console.log("Pulsado OK");
+    });
+    
+    modal.addEventListener('cancel', function() {
+        console.log("Pulsado CANCEL");
+    });
 }
 
